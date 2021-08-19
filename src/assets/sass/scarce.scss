@@ -7,4 +7,9 @@ $family-primary: Proxima Nova;
 $primary: #FD6B4B;
 $link: $primary;
 
+$weight-normal: 600;
+$weight-medium: 700;
+$weight-semibold: 800;
+$weight-bold: 900;
+
 @import "../../../node_modules/bulma/bulma.sass";

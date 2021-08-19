@@ -311,7 +311,7 @@ pre {
 body {
   color: #4a4a4a;
   font-size: 1em;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.5; }
 
 a {
@@ -354,7 +354,7 @@ span {
 
 strong {
   color: #363636;
-  font-weight: 700; }
+  font-weight: 900; }
 
 fieldset {
   border: none; }
@@ -1346,7 +1346,7 @@ a.box:active {
 .content h5,
 .content h6 {
   color: #363636;
-  font-weight: 600;
+  font-weight: 800;
   line-height: 1.125; }
 
 .content h1 {
@@ -2091,7 +2091,7 @@ a.tag:hover {
 .title {
   color: #363636;
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 800;
   line-height: 1.125; }
   .title strong {
     color: inherit;
@@ -2116,11 +2116,11 @@ a.tag:hover {
 .subtitle {
   color: #4a4a4a;
   font-size: 1.25rem;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.25; }
   .subtitle strong {
     color: #363636;
-    font-weight: 600; }
+    font-weight: 800; }
   .subtitle:not(.is-spaced) + .title {
     margin-top: -1.25rem; }
   .subtitle.is-1 {
@@ -2749,7 +2749,7 @@ a.tag:hover {
   color: #363636;
   display: block;
   font-size: 1rem;
-  font-weight: 700; }
+  font-weight: 900; }
   .label:not(:last-child) {
     margin-bottom: 0.5em; }
   .label.is-small {
@@ -3049,7 +3049,7 @@ a.tag:hover {
   color: #363636;
   display: flex;
   flex-grow: 1;
-  font-weight: 700;
+  font-weight: 900;
   padding: 0.75rem 1rem; }
   .card-header-title.is-centered {
     justify-content: center; }
@@ -3418,7 +3418,7 @@ button.dropdown-item {
   border-radius: 4px 4px 0 0;
   color: #fff;
   display: flex;
-  font-weight: 700;
+  font-weight: 900;
   justify-content: space-between;
   line-height: 1.25;
   padding: 0.75em 1em;
@@ -4529,7 +4529,7 @@ a.navbar-item,
   border-radius: 6px 6px 0 0;
   color: #363636;
   font-size: 1.25em;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 1.25;
   padding: 0.75em 1em; }
 
@@ -7003,16 +7003,16 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   font-weight: 300 !important; }
 
 .has-text-weight-normal {
-  font-weight: 400 !important; }
-
-.has-text-weight-medium {
-  font-weight: 500 !important; }
-
-.has-text-weight-semibold {
   font-weight: 600 !important; }
 
-.has-text-weight-bold {
+.has-text-weight-medium {
   font-weight: 700 !important; }
+
+.has-text-weight-semibold {
+  font-weight: 800 !important; }
+
+.has-text-weight-bold {
+  font-weight: 900 !important; }
 
 .is-family-primary {
   font-family: Proxima Nova !important; }
