@@ -122,7 +122,7 @@ export default {
           twitter: 'sircryptos',
           description: 'Entrepreneur turned NFT collector trying to bring love to NFTs! BAYC, Alien boys, BOTB and HOK owner.',
           image: "/sircryptos.jpg",
-          wallet: '0x7fc55376D5A29e0Ee86C18C81bb2fC8F9f490E50',
+          wallet: '0xa809e097f1ec8ecc8d2677d70c2f32742851dd62',
           nfts: [],
         },
         sara: {
