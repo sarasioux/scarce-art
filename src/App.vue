@@ -34,13 +34,13 @@
         </div>
     </nav>
     <div class="columns is-pulled-up main-columns">
-        <div class="column is-6 has-text-right has-background-primary">
-            <h1 class="title proxima has-text-white is-pushed-down">SCARCE&nbsp;</h1>
+        <div class="column is-6 has-text-right has-background-black">
+            <h1 class="title proxima has-text-white is-pushed-down">SCARCE</h1>
 
             <section class="section" v-if="section === 'team'">
                 <div class="tabs is-right">
                     <ul>
-                        <li><h2 class="title">Team &nbsp; &nbsp; &nbsp; &nbsp;</h2></li>
+                        <li><h2 class="title has-text-primary">Team &nbsp; &nbsp; &nbsp; &nbsp;</h2></li>
                         <li :class="{'is-active':(selected === 'shaun')}"><a @click="selected='shaun'">Shaun</a></li>
                         <li :class="{'is-active':(selected === 'sara')}"><a @click="selected='sara'">Sara</a></li>
                         <li :class="{'is-active':(selected === 'mark')}"><a @click="selected='mark'">Mark</a></li>
@@ -88,7 +88,7 @@
         </div>
         <div class="column is-6 has-text-left">
 
-            <h1 class="title proxima has-text-black">&nbsp;ART</h1>
+            <h1 class="title proxima has-text-black">ART</h1>
 
             <section class="section" v-if="section === 'team'">
                 <h2 class="title">{{selected}}'s NFTs</h2>
