@@ -184,8 +184,8 @@ export default {
         min-height: 100%;
     }
     .proxima {
-        font-weight: 900;
-        font-size: 7em;
+        font-weight: 900 !important;
+        font-size: 7em !important;
     }
     .card-wrapper {
         width: 500px;
