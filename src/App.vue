@@ -17,11 +17,11 @@
                     Team
                 </a>
 
-                <a class="navbar-item" @click="section='portfolio'">
+                <a class="navbar-item" @click="section='portfolio'" :class="{'is-active':(section === 'portfolio')}">
                     Portfolio
                 </a>
 
-                <a class="navbar-item" @click="section='services'">
+                <a class="navbar-item" @click="section='services'" :class="{'is-active':(section === 'services')}">
                     Services
                 </a>
 
@@ -38,9 +38,9 @@
             <h1 class="title proxima has-text-white is-pushed-down">SCARCE</h1>
 
             <section class="section" v-if="section === 'team'">
+                <h2 class="title has-text-primary">Team</h2>
                 <div class="tabs is-right">
                     <ul>
-                        <li><h2 class="title has-text-primary">Team &nbsp; &nbsp; &nbsp; &nbsp;</h2></li>
                         <li :class="{'is-active':(selected === 'shaun')}"><a @click="selected='shaun'">Shaun</a></li>
                         <li :class="{'is-active':(selected === 'sara')}"><a @click="selected='sara'">Sara</a></li>
                         <li :class="{'is-active':(selected === 'mark')}"><a @click="selected='mark'">Mark</a></li>
@@ -62,7 +62,7 @@
                                 <div class="media">
                                     <div class="media-content">
                                         <p class="title is-4">{{team[selected].name}}</p>
-                                        <p class="subtitle is-6">@{{team[selected].twitter}}</p>
+                                        <p class="subtitle is-6"><a :href="'https://twitter.com/' + team[selected].twitter" target="_blank">@{{team[selected].twitter}}</a></p>
                                     </div>
                                 </div>
 
@@ -76,8 +76,42 @@
             </section>
 
             <section class="section" v-if="section === 'portfolio'">
-                <h2 class="title">Portfolio</h2>
-                Coming Soon
+                <h2 class="title has-text-primary">Portfolio</h2>
+                <div class="tabs is-right">
+                    <ul>
+                        <li :class="{'is-active':(selectedPortfolio === 'stonersrock')}"><a @click="selectedPortfolio='stonersrock'">Stoners Rock</a></li>
+                        <li :class="{'is-active':(selectedPortfolio === 'bingoswap')}"><a @click="selectedPortfolio='bingoswap'">Bingo Swap</a></li>
+                        <li :class="{'is-active':(selectedPortfolio === 'halloweeners')}"><a @click="selectedPortfolio='halloweeners'">Halloweeners</a></li>
+                    </ul>
+                </div>
+
+                <div class="columns">
+                    <div class="column"></div>
+
+                    <div class="column is-6">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-square">
+                                    <img :src="portfolio[selectedPortfolio].image">
+                                </figure>
+                            </div>
+
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-content">
+                                        <p class="title is-4">{{portfolio[selectedPortfolio].name}}</p>
+                                        <p class="subtitle is-6"><a :href="'https://twitter.com/' + portfolio[selectedPortfolio].twitter" target="_blank">@{{portfolio[selectedPortfolio].twitter}}</a></p>
+                                    </div>
+                                </div>
+
+                                <div class="content">
+                                    {{portfolio[selectedPortfolio].description}}<br />
+                                    <a :href="portfolio[selectedPortfolio].link" target="_blank">{{portfolio[selectedPortfolio].link}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section class="section" v-if="section === 'services'">
@@ -92,8 +126,22 @@
 
             <section class="section" v-if="section === 'team'">
                 <h2 class="title">{{selected}}'s NFTs</h2>
-                <div class="columns is-multiline">
+                <div class="columns is-multiline is-nfts">
                     <div class="column is-3" v-for="nft in team[selected].nfts" :key="nft.id">
+                        <figure class="image is-square">
+                            <img :src="nft.image_url" />
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" v-if="section === 'portfolio'">
+                <h2 class="title">{{portfolio[selectedPortfolio].name}}'s NFTs</h2>
+                <div class="columns is-multiline is-nfts">
+                    <div class="column" v-if="portfolio[selectedPortfolio].nfts.length === 0">
+                        <p>Project NFTs coming soon.</p>
+                    </div>
+                    <div class="column is-3" v-for="nft in portfolio[selectedPortfolio].nfts" :key="nft.id">
                         <figure class="image is-square">
                             <img :src="nft.image_url" />
                         </figure>
@@ -116,6 +164,7 @@ export default {
     return {
       section: 'team',
       selected: 'shaun',
+      selectedPortfolio: 'stonersrock',
       team: {
         shaun: {
           name: 'Shaun',
@@ -141,6 +190,36 @@ export default {
           wallet: '0xB58Fb5372e9Aa0C86c3B281179c05Af3bB7a181b',
           nfts: []
         }
+      },
+      portfolio: {
+        stonersrock: {
+          name: 'Stoners Rock',
+          twitter: 'mystoners',
+          description: '10,420 pet rocks minted on the Ethereum blockchain.',
+          image: "/rock.png",
+          collection: '0x13df7973ea203868af66fcffd86fe8cb63edd378',
+          nfts: [],
+          link: 'https://stonersrock.com'
+        },
+        bingoswap: {
+          name: 'Bingo Swap',
+          twitter: 'nftbingo',
+          description: 'Play BINGO on the Blockchain with verifiable randomness and ETH prizes.',
+          image: "/bingo.png",
+          collection: '',
+          nfts: [],
+          link: 'https://bingoswap.art'
+        },
+        halloweeners: {
+          name: 'Halloweeners',
+          twitter: 'halloweeners',
+          description: '6,666 Halloween themed avatars minted on the Ethereum blockchain.',
+          image: "/halloweeners.gif",
+          collection: '',
+          nfts: [],
+          link: 'https://halloweeners.art'
+        }
+
       }
 
     }
@@ -165,8 +244,11 @@ export default {
         data = await response.json();
         this.team.mark.nfts = data.assets;
 
-
-
+        apiUrl = 'https://api.opensea.io/api/v1/assets?asset_contract_address=' + this.portfolio.stonersrock.collection + '&order_direction=desc&offset=0&limit=50';
+        response = await fetch(apiUrl);
+        data = await response.json();
+        console.log('data', data);
+        this.portfolio.stonersrock.nfts = data.assets;
     }
   }
 }
@@ -202,5 +284,11 @@ export default {
     }
     .navbar {
         background: transparent !important;
+    }
+    a.navbar-item.is-active {
+        text-decoration: underline;
+    }
+    .is-nfts {
+        margin-top: 4.5em;
     }
 </style>
