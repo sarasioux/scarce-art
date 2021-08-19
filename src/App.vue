@@ -175,7 +175,6 @@ export default {
 <style>
     html, body, #app {
         height: 100%;
-        font-family: Proxima Nova;
     }
     .title {
         text-transform: uppercase;

@@ -1,5 +1,8 @@
 @charset "utf-8";
 @import "../../../node_modules/bulma/sass/utilities/functions";
+@import url('https://fonts.googleapis.com/css?family=Proxima+Nova:600,700,800,900');
+
+$family-primary: Proxima Nova;
 
 $primary: #FD6B4B;
 $link: #feb5a5;
