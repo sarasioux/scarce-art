@@ -12,4 +12,6 @@ $weight-medium: 700;
 $weight-semibold: 800;
 $weight-bold: 900;
 
+$title-weight: $weight-bold;
+
 @import "../../../node_modules/bulma/bulma.sass";
